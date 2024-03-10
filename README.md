@@ -1,6 +1,6 @@
 # All-In-One
 
-This GitHub repo serves as a codebase for Hackathon project.
+This GitHub repo serves as a codebase for our project for Hackathon hosted by MLH.
 
 Frameworks: Streamlit
 
@@ -12,7 +12,7 @@ Frameworks: Streamlit
     pip3 install -r requirements.txt
 ```
 
-**To run the app:** `streamlit run app.pyr`
+**To run the app:** `streamlit run Main.py`
 
 And then the server is running up on the local host: `http://localhost:8501/`
 

@@ -2,14 +2,10 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
- 
-st.write("""
-# My first app
-Hello *world!*
-""")
+st.markdown("# Job Pulse  ❄️")
+st.sidebar.markdown("# Job Pulse ❄️")
 
-
-# Parse the data
+# Parse the data from Job Pulse
 file_path = 'data/job_pulse.csv'
 df = pd.read_csv(file_path)
 df['Time'] = pd.to_datetime(df['Time'] + ' 2024', format='%b %d %Y')
@@ -33,5 +29,3 @@ st.subheader('Total Number of Job Postings for Each Year of Experience Required'
 fig_bar = px.bar(df.groupby('YoE').size().reset_index(name='Job Count'),
                  x='YoE', y='Job Count', labels={'Job Count': 'Total Job Postings', 'YoE': 'Years of Experience'})
 st.plotly_chart(fig_bar)
-
-
