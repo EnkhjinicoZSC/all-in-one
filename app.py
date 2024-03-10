@@ -13,9 +13,6 @@ Hello *world!*
 file_path = 'data/job_pulse.csv'
 df = pd.read_csv(file_path)
 df['Time'] = pd.to_datetime(df['Time'] + ' 2024', format='%b %d %Y')
-print(df['Time'])
-
-# Process data to count the number of jobs posted each day
 
 
 # JOB POSTINGS OVER TIME
@@ -30,5 +27,11 @@ daily_job_counts = filtered_df.groupby(filtered_df['Time'].dt.date).size().reset
 fig = px.scatter(daily_job_counts, x='Time', y='Job Count', title='Job Postings Over Time',
                  labels={'Job Count': 'Number of Jobs Posted', 'Time': 'Date'})
 st.plotly_chart(fig)
+
+# Bar plot showing the total number of job postings for each YoE
+st.subheader('Total Number of Job Postings for Each Year of Experience Required')
+fig_bar = px.bar(df.groupby('YoE').size().reset_index(name='Job Count'),
+                 x='YoE', y='Job Count', labels={'Job Count': 'Total Job Postings', 'YoE': 'Years of Experience'})
+st.plotly_chart(fig_bar)
 
 
