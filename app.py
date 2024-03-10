@@ -32,6 +32,3 @@ fig = px.scatter(daily_job_counts, x='Time', y='Job Count', title='Job Postings 
 st.plotly_chart(fig)
 
 
-
-# 
-
