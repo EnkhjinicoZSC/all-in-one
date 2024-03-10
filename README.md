@@ -8,6 +8,7 @@ This is not a place to find job postings. You can use this web app to get a feel
 
 We started this idea because this is something that we definitely need as current job seekers and we hope others find it useful as well. 
 
+# Codebase
 The codebase here does the following:
 - Scrapes reliable sources of job postings: jobpulse.fyi, simplify.com
 - Provides data visualizations with a degree of interactive features using streamlit
@@ -20,7 +21,10 @@ We hope to provide the following features in the future:
 
 Frameworks used: Streamlit, Pandas, Plotly
 
-## To initialize:
+
+# Setup:
+
+## To initiliaze
 
 ```bash
     python3 -m venv venv
